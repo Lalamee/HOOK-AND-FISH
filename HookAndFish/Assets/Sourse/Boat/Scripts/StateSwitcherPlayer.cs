@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 [RequireComponent(typeof(BoatMover))]
@@ -7,13 +6,13 @@ public class StateSwitcherPlayer : MonoBehaviour
     [SerializeField] private Hook _hook;
     [SerializeField] private HarpoonControl _harpoonControl;
     [SerializeField] private Laser _laser;
-    [SerializeField] private Canvas _arrows;
     [SerializeField] private float rotationSpeed = 5f; 
 
     private BoatMover _boatMover;
 
     private bool isRotating = false; 
     private Quaternion desiredRotation;
+    private Vector3 desiredPosition;
 
     private void Start()
     {
@@ -31,29 +30,28 @@ public class StateSwitcherPlayer : MonoBehaviour
             if (Quaternion.Angle(transform.rotation, desiredRotation) < 0.1f)
             {
                 isRotating = false;
-                _boatMover.enabled = false;
                 _hook.enabled = true;
                 _laser.OnRenderer();
                 _harpoonControl.enabled = true;
-                _arrows.enabled = false;
             }
         }
     }
 
     private void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.TryGetComponent(out AreaForBoat _areaForBoat))
+        if (collider.gameObject.TryGetComponent(out AreaForBoat areaForBoat))
         {
-            RotateToAxisZ();
-            _areaForBoat.StartSpawnFish();
+            RotateToAxisZ(areaForBoat);
+            _boatMover.enabled = false;
+            areaForBoat.StartSpawnFish();
         }
     }
     
-    private void RotateToAxisZ()
+    private void RotateToAxisZ(AreaForBoat area)
     {
         isRotating = true;
-        
-        Vector3 targetDirection = Vector3.forward; 
+
+        Vector3 targetDirection = Vector3.forward;
         desiredRotation = Quaternion.LookRotation(targetDirection, Vector3.up);
     }
 }

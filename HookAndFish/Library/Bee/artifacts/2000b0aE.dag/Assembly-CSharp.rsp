@@ -363,7 +363,6 @@
 "Assets/GUI Kit Casual Game/Scripts/Panel.cs"
 "Assets/GUI Kit Casual Game/Scripts/PanelControl.cs"
 "Assets/Sourse/Boat/Scripts/Boat.cs"
-"Assets/Sourse/Boat/Scripts/BoatInput.cs"
 "Assets/Sourse/Boat/Scripts/BoatMover.cs"
 "Assets/Sourse/Boat/Scripts/StateSwitcherPlayer.cs"
 "Assets/Sourse/Camera/Scripts/CameraFollower.cs"
