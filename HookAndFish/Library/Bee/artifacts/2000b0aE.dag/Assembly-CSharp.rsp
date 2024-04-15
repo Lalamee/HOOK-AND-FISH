@@ -383,6 +383,7 @@
 "Assets/Sourse/Level/Fishing Zone/Scripts/FishingStoper.cs"
 "Assets/Sourse/Level/Fishing Zone/Scripts/FishingZone.cs"
 "Assets/Sourse/Level/Scripts/LevelFinisher.cs"
+"Assets/Sourse/Level/Scripts/LevelTimer.cs"
 "Assets/Sourse/Player/Scripts/Player.cs"
 "Assets/Sourse/Player/Scripts/PlayerLevel.cs"
 -langversion:9.0
