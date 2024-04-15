@@ -18,6 +18,10 @@ public class BoatMover : MonoBehaviour
         MoveToTarget(nearestTarget);
     }
 
+    private void OnEnable()
+    {
+        FindAllTargetAreas();
+    }
     private void FindAllTargetAreas()
     {
         _allTargetAreas = FindObjectsOfType<AreaForBoat>();
@@ -36,8 +40,12 @@ public class BoatMover : MonoBehaviour
 
         foreach (AreaForBoat area in _allTargetAreas)
         {
+            if (area == null)
+                continue;
+
             Vector3 targetPoint = area.transform.position;
             float distance = Vector3.Distance(transform.position, targetPoint);
+
             if (distance < nearestDistance)
             {
                 nearestTarget = targetPoint;
