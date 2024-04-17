@@ -1,16 +1,12 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class BoatMover : MonoBehaviour
 {
     [SerializeField] private float _moveSpeed = 10f;
     [SerializeField] private float _rotationSpeed = 4f;
 
-    private AreaForBoat[] _allTargetAreas; 
-
-    private void Start()
-    {
-        FindAllTargetAreas();
-    }
+    private List<AreaForBoat> _allTargetAreas = new List<AreaForBoat>();
 
     private void Update()
     {
@@ -22,27 +18,26 @@ public class BoatMover : MonoBehaviour
     {
         FindAllTargetAreas();
     }
+
     private void FindAllTargetAreas()
     {
-        _allTargetAreas = FindObjectsOfType<AreaForBoat>();
+        _allTargetAreas.Clear();
+        AreaForBoat[] areas = FindObjectsOfType<AreaForBoat>();
+        _allTargetAreas.AddRange(areas);
     }
 
     private Vector3 FindNearestTarget()
     {
-        if (_allTargetAreas == null || _allTargetAreas.Length == 0)
-        {
-            Debug.LogWarning("Ќе найдены точки дл€ перемещени€ лодки.");
-            return transform.position;
-        }
+
+
+        _allTargetAreas.RemoveAll(area => area == null);
+
 
         Vector3 nearestTarget = _allTargetAreas[0].transform.position;
         float nearestDistance = Mathf.Infinity;
 
         foreach (AreaForBoat area in _allTargetAreas)
         {
-            if (area == null)
-                continue;
-
             Vector3 targetPoint = area.transform.position;
             float distance = Vector3.Distance(transform.position, targetPoint);
 
