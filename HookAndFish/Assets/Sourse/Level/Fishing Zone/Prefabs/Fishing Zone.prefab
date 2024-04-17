@@ -408,34 +408,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 936229406993996768}
     m_Modifications:
-    - target: {fileID: 5514694442440878634, guid: 022a8f86bf111fb4189de5f83bad9071, type: 3}
-      propertyPath: _fishingZone
-      value: 
-      objectReference: {fileID: 6574824867455404948}
-    - target: {fileID: 6307513055079623248, guid: 022a8f86bf111fb4189de5f83bad9071, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6307513055079623248, guid: 022a8f86bf111fb4189de5f83bad9071, type: 3}
-      propertyPath: _spawnRange
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6307513055079623248, guid: 022a8f86bf111fb4189de5f83bad9071, type: 3}
-      propertyPath: _fishPrefabs.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6307513055079623248, guid: 022a8f86bf111fb4189de5f83bad9071, type: 3}
-      propertyPath: _fishPrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 9042627746069258380, guid: 0ae11ea9408312d41a6cb8e49617b8d0, type: 3}
-    - target: {fileID: 6307513055079623248, guid: 022a8f86bf111fb4189de5f83bad9071, type: 3}
-      propertyPath: _fishPrefabs.Array.data[1]
-      value: 
-      objectReference: {fileID: 5155762770936869054, guid: 782ca720f2dc2774c9f798cc4ed10221, type: 3}
-    - target: {fileID: 6307513055079623249, guid: 022a8f86bf111fb4189de5f83bad9071, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6307513055079623249, guid: 022a8f86bf111fb4189de5f83bad9071, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -480,8 +452,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fish Spawner
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2300076479782928933, guid: 022a8f86bf111fb4189de5f83bad9071, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

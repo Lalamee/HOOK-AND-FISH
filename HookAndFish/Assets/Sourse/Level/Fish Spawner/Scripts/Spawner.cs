@@ -1,54 +1,45 @@
-using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] _fishPrefabs;
-    [SerializeField] private Transform[] _spawnAreas;
     [SerializeField] private float _secondsBetweenSpawn;
-    [SerializeField] private float _spawnRange;
 
-    private float _spawnTime = 0.5f;
+    private Transform[] _spawnPoints;
     private float _elapsedTime = 0f;
-    private int _startPoint = 0;
-    
+
+    private void Start()
+    {
+        // Находим все дочерние объекты текущего объекта и используем их в качестве точек появления
+        _spawnPoints = GetComponentsInChildren<Transform>();
+    }
+
     private void Update()
     {
         _elapsedTime += Time.deltaTime;
-        
+
         if (_elapsedTime >= _secondsBetweenSpawn)
         {
             _elapsedTime = 0f;
-            CreateFishInArea();
+            CreateFishAtRandomPoint();
         }
     }
 
-    private void CreateFishInArea()
+    private void CreateFishAtRandomPoint()
     {
-        int spawnPointNumber = Random.Range(_startPoint, _spawnAreas.Length);
-        Vector3 spawnPosition = GetRandomPosition(spawnPointNumber);
-        
-        GameObject fish = Instantiate(GetRandomPrefab(_fishPrefabs), spawnPosition, _spawnAreas[spawnPointNumber].rotation);
-        fish.transform.parent = _spawnAreas[spawnPointNumber];
-        FishMover fishMovement = fish.GetComponent<FishMover>();
-    }
+        int spawnPointIndex = Random.Range(1, _spawnPoints.Length); // Начинаем с 1, чтобы избежать самого объекта Spawner
+        Transform spawnPoint = _spawnPoints[spawnPointIndex];
 
-    private Vector3 GetRandomPosition(int spawnPointNumber)
-    {
-        Vector3 randomPosition = new Vector3(
-            _spawnAreas[spawnPointNumber].position.x, 
-            _spawnAreas[spawnPointNumber].position.y, 
-            Random.Range(_spawnAreas[spawnPointNumber].position.z - _spawnRange, _spawnAreas[spawnPointNumber].position.z + _spawnRange));
+        GameObject fishPrefab = GetRandomPrefab(_fishPrefabs);
+        GameObject fish = Instantiate(fishPrefab, spawnPoint.position, spawnPoint.rotation);
 
-        return randomPosition;
+        fish.transform.parent = spawnPoint;
     }
 
     private GameObject GetRandomPrefab(GameObject[] prefabs)
     {
         int randomIndex = Random.Range(0, prefabs.Length);
-        GameObject prefab = prefabs[randomIndex];
-
-        return prefab;
+        return prefabs[randomIndex];
     }
 }
