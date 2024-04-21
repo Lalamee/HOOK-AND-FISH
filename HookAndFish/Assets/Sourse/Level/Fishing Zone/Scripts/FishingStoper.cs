@@ -25,10 +25,9 @@ public class FishingStoper : MonoBehaviour
     private void Update()
     { 
         _countTrappedFish = _player.GetCountTrappedFish();
+
         if (_countTrappedFish == _needCountFish)
-        {
             StopFishing();
-        }
     }
 
     private void StopFishing()

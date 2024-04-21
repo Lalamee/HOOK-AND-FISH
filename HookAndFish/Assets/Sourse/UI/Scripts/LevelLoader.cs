@@ -15,6 +15,11 @@ public class LevelLoader : MonoBehaviour, ISceneLoadHandler<int>
         SceneManager.LoadScene(0);
     }
 
+    public void RestartThisLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     public void OnSceneLoaded(int argument)
     {
 

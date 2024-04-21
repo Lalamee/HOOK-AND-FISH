@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GoodEnd : MonoBehaviour
@@ -9,7 +7,6 @@ public class GoodEnd : MonoBehaviour
         gameObject.SetActive(true);
     }
 
-    // Метод для выключения объекта
     public void TurnOffObject()
     {
         gameObject.SetActive(false);

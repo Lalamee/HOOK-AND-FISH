@@ -5,12 +5,13 @@ public class FishLevelTransmitter : MonoBehaviour
 {
     private Fish _fish;
     private Player _player;
+    private LevelFinisher _levelFinisher;
 
     private void Start()
     {
- 
         _fish = GetComponent<Fish>();
         _player = FindObjectOfType<Player>();
+        _levelFinisher = FindObjectOfType<LevelFinisher>();
     }
 
     public void TransmitAndDestroy()
@@ -22,7 +23,7 @@ public class FishLevelTransmitter : MonoBehaviour
         }
         else
         {
-            Destroy(_player.gameObject);
+            _levelFinisher.BadEnd();
         }
     }
 }
