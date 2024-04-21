@@ -6,7 +6,13 @@ public class BoatMover : MonoBehaviour
     [SerializeField] private float _moveSpeed = 10f;
     [SerializeField] private float _rotationSpeed = 4f;
 
+    private LevelFinisher _levelFinisher;
     private List<AreaForBoat> _allTargetAreas = new List<AreaForBoat>();
+
+    private void Start()
+    {
+        _levelFinisher = FindObjectOfType<LevelFinisher>();
+    }
 
     private void Update()
     {
@@ -28,10 +34,13 @@ public class BoatMover : MonoBehaviour
 
     private Vector3 FindNearestTarget()
     {
-
-
         _allTargetAreas.RemoveAll(area => area == null);
 
+        if (_allTargetAreas.Count == 0)
+        {
+            _levelFinisher.GoodEnd();
+            return Vector3.zero;
+        }
 
         Vector3 nearestTarget = _allTargetAreas[0].transform.position;
         float nearestDistance = Mathf.Infinity;

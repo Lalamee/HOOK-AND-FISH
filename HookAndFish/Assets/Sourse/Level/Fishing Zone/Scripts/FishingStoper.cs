@@ -33,7 +33,6 @@ public class FishingStoper : MonoBehaviour
 
     private void StopFishing()
     {
-        _levelFinisher.FinishFishingInZone();
         Destroy(gameObject);
         _laser.OffRenderer();
         _player.SetNewStartLevel();

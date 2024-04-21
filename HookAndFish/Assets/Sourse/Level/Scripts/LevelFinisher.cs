@@ -2,16 +2,31 @@ using UnityEngine;
 
 public class LevelFinisher : MonoBehaviour
 {
-    private int _needCountFinishZone = 3;
-    private int _countFinishZone = 0;
-    
-    public void FinishFishingInZone()
-    {
-        _countFinishZone++;
+    private GoodEnd _goodEnd;
 
-        if (_countFinishZone == _needCountFinishZone)
+    private void Awake()
+    {
+        _goodEnd = FindObjectOfType<GoodEnd>();
+        _goodEnd.TurnOffObject();
+    }
+
+    public void BadEnd()
+    {
+
+    }
+
+    public void GoodEnd() 
+    {
+        if( _goodEnd == null)
         {
-            Debug.Log("–ö–æ–Ω–µ—Ü");
+            Debug.Log("√ƒ≈ ¡Àﬂ“‹");
         }
+        _goodEnd.TurnOnObject();
+        End();
+    }
+
+    private void End()
+    {
+        Time.timeScale = 0;
     }
 }

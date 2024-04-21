@@ -11,7 +11,6 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
-        // Находим все дочерние объекты текущего объекта и используем их в качестве точек появления
         _spawnPoints = GetComponentsInChildren<Transform>();
     }
 
@@ -28,7 +27,7 @@ public class Spawner : MonoBehaviour
 
     private void CreateFishAtRandomPoint()
     {
-        int spawnPointIndex = Random.Range(1, _spawnPoints.Length); // Начинаем с 1, чтобы избежать самого объекта Spawner
+        int spawnPointIndex = Random.Range(1, _spawnPoints.Length);
         Transform spawnPoint = _spawnPoints[spawnPointIndex];
 
         GameObject fishPrefab = GetRandomPrefab(_fishPrefabs);
