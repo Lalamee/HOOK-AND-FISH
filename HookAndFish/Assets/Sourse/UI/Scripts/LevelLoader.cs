@@ -6,7 +6,7 @@ public class LevelLoader : MonoBehaviour, ISceneLoadHandler<int>
 {
     public void LoadLevel()
     {
-        int randomLevelNumber = Random.Range(3, 22);
+        int randomLevelNumber = Random.Range(2, 4);
         SceneManager.LoadScene(randomLevelNumber);
     }
 

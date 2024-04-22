@@ -8,7 +8,6 @@ public class FishingStoper : MonoBehaviour
     private HarpoonControl _harpoon;
     private Hook _hook;
     private Laser _laser;
-    private LevelFinisher _levelFinisher;
     private int _countTrappedFish;
     private int _needCountFish = 3;
 
@@ -19,7 +18,6 @@ public class FishingStoper : MonoBehaviour
         _harpoon = FindObjectOfType<HarpoonControl>();
         _hook = FindObjectOfType<Hook>();
         _laser = FindObjectOfType<Laser>();
-        _levelFinisher = FindObjectOfType<LevelFinisher>();
     }
 
     private void Update()

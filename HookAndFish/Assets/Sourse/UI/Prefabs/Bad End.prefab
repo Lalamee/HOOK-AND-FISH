@@ -15385,7 +15385,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 136726738980029867}
-  - component: {fileID: 9213199804194727295}
+  - component: {fileID: 4454716594703641440}
   m_Layer: 5
   m_Name: Bad End
   m_TagString: Untagged
@@ -15419,7 +15419,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &9213199804194727295
+--- !u!114 &4454716594703641440
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15428,11 +15428,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6629552070622510594}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a00128818eda43dfaa959b83527b255, type: 3}
+  m_Script: {fileID: 11500000, guid: 5351a91fce3780347b5d32b2de80bb55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  otherPanels:
-  - {fileID: 0}
 --- !u!1 &7030724083425810364
 GameObject:
   m_ObjectHideFlags: 0
@@ -15470,7 +15468,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -72.17969, y: -82.10167}
+  m_AnchoredPosition: {x: -72.17969, y: -82.101685}
   m_SizeDelta: {x: 144.75916, y: 132}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5101148067746072753
