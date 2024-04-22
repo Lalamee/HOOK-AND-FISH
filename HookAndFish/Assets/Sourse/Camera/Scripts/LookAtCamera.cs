@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class LookAtCamera : MonoBehaviour
@@ -16,7 +15,7 @@ public class LookAtCamera : MonoBehaviour
     {
         if (mainCamera != null)
         {
-            _transform.LookAt(2 * _transform.position - mainCamera.transform.position);
+            _transform.LookAt(_transform.position - mainCamera.transform.position);
         }
     }
 }
