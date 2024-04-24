@@ -395,6 +395,7 @@
 "Assets/Sourse/UI/Scripts/BadEnd.cs"
 "Assets/Sourse/UI/Scripts/GoodEnd.cs"
 "Assets/Sourse/UI/Scripts/LevelLoader.cs"
+"Assets/Sourse/UI/Scripts/LevelPerSession.cs"
 -langversion:9.0
 
 /deterministic

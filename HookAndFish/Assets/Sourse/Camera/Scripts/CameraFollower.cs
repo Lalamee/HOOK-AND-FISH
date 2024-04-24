@@ -13,10 +13,10 @@ public class CameraFollower : MonoBehaviour
 
     private void Update()
     {
-        if (_isSwims)
+        //if (_isSwims)
             PlayerSwims();
-        else
-            PlayerCatch();
+       // else
+            //PlayerCatch();
     }
 
     public void ChangeState() 

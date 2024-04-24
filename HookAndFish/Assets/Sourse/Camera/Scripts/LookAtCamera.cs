@@ -15,7 +15,7 @@ public class LookAtCamera : MonoBehaviour
     {
         if (mainCamera != null)
         {
-            _transform.LookAt(_transform.position - mainCamera.transform.position);
+            _transform.LookAt(2 * _transform.position - mainCamera.transform.position);
         }
     }
 }
