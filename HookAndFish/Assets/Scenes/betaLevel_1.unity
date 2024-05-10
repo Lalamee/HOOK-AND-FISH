@@ -1253,9 +1253,9 @@ MonoBehaviour:
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 0
-  m_XDamping: 1
-  m_YDamping: 1
-  m_ZDamping: 1
+  m_XDamping: 10
+  m_YDamping: 10
+  m_ZDamping: 10
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
   m_ScreenY: 0.5
@@ -1264,10 +1264,10 @@ MonoBehaviour:
   m_DeadZoneHeight: 0
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
-  m_SoftZoneWidth: 0.43
-  m_SoftZoneHeight: 0.7
+  m_SoftZoneWidth: 0.44
+  m_SoftZoneHeight: 0.57
   m_BiasX: 0
-  m_BiasY: 0.123
+  m_BiasY: 0.339
   m_CenterOnActivate: 1
   m_GroupFramingMode: 2
   m_AdjustmentMode: 0
@@ -1647,6 +1647,7 @@ SceneRoots:
   - {fileID: 2122940708}
   - {fileID: 705507995}
   - {fileID: 963194228}
+  - {fileID: 1714123110}
   - {fileID: 342275242}
   - {fileID: 1287740494}
   - {fileID: 1455650616}
@@ -1656,4 +1657,3 @@ SceneRoots:
   - {fileID: 1991690143}
   - {fileID: 1424727221}
   - {fileID: 411790291}
-  - {fileID: 1714123110}
