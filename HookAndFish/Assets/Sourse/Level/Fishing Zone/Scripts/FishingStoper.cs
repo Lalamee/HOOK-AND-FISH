@@ -3,7 +3,6 @@ using UnityEngine;
 [RequireComponent(typeof(FishingZone))]
 public class FishingStoper : MonoBehaviour
 {
-    private CameraFollower _cameraFollower;
     private Player _player;
     private BoatMover _boat;
     private HarpoonControl _harpoon;
@@ -15,7 +14,6 @@ public class FishingStoper : MonoBehaviour
     private void Start()
     {
         _player = FindObjectOfType<Player>();
-        _cameraFollower = FindObjectOfType<CameraFollower>();
         _boat = FindObjectOfType<BoatMover>();
         _harpoon = FindObjectOfType<HarpoonControl>();
         _hook = FindObjectOfType<Hook>();
@@ -33,7 +31,6 @@ public class FishingStoper : MonoBehaviour
     private void StopFishing()
     {
         Destroy(gameObject);
-        _cameraFollower.ChangeState();
         _laser.OffRenderer();
         _player.SetNewStartLevel();
         _player.ResetCountTrappedFish();

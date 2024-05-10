@@ -8,7 +8,6 @@ public class Player : MonoBehaviour
     private int _countTrappedFish;
 
     public event UnityAction<int> LevelChange;
-    public event UnityAction<int> FinishLevel;
     public event UnityAction<int> CountTrappedFishChange;
 
     private void Start()
@@ -48,7 +47,6 @@ public class Player : MonoBehaviour
     public void SetNewStartLevel()
     {
         _startLevel = _level;
-        FinishLevel?.Invoke(_level);
     }
 
     public int GetCountTrappedFish()

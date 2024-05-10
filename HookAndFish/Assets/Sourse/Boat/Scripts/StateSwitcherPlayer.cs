@@ -4,7 +4,6 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 [RequireComponent(typeof(BoatMover))]
 public class StateSwitcherPlayer : MonoBehaviour
 {
-    private CameraFollower _cameraFollower;
     private HarpoonControl _harpoonControl;
     private BoatMover _boatMover;
     private Laser _laser;
@@ -18,7 +17,6 @@ public class StateSwitcherPlayer : MonoBehaviour
     {
         _boatMover = GetComponent<BoatMover>();
 
-        _cameraFollower = FindObjectOfType<CameraFollower>();
         _harpoonControl = FindObjectOfType<HarpoonControl>();
         _hook = FindObjectOfType<Hook>();
         _laser = FindObjectOfType<Laser>();
@@ -36,7 +34,6 @@ public class StateSwitcherPlayer : MonoBehaviour
     {
         if (collider.gameObject.TryGetComponent(out AreaForBoat areaForBoat))
         {
-            _cameraFollower.ChangeState();
             StartProcessing(areaForBoat.transform.position);
             areaForBoat.StartSpawnFish();
         }
