@@ -5,40 +5,43 @@ public class LevelTimer : MonoBehaviour
 {
     [SerializeField] private TMP_Text timerText;
 
-    private int levelMinutes = 1; 
-    private int levelSeconds = 0; 
-    private float currentTime = 0f;
+    private LevelFinisher _levelFinisher;
+    private int _levelMinutes = 0; 
+    private int _levelSeconds = 30; 
+    private float _currentTime = 0f;
 
     void Start()
     {
+        _levelFinisher = FindObjectOfType<LevelFinisher>();
+
         StartLevelTimer();
     }
 
     void Update()
     {
-        currentTime -= Time.deltaTime;
+        _currentTime -= Time.deltaTime;
         UpdateTimerUI();
 
-        if (currentTime <= 0f)
+        if (_currentTime <= 0f)
             LevelEnd();
     }
 
     void StartLevelTimer()
     {
-        currentTime = levelMinutes * 60 + levelSeconds;
+        _currentTime = _levelMinutes * 60 + _levelSeconds;
         UpdateTimerUI();
     }
 
     void UpdateTimerUI()
     {
-        int minutes = Mathf.FloorToInt(currentTime / 60);
-        int seconds = Mathf.FloorToInt(currentTime % 60);
+        int minutes = Mathf.FloorToInt(_currentTime / 60);
+        int seconds = Mathf.FloorToInt(_currentTime % 60);
 
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
     void LevelEnd()
     {
-        Debug.Log("Level Time's up!");
+        _levelFinisher.BadEnd();
     }
 }
